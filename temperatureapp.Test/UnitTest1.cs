@@ -76,5 +76,80 @@ public class UnitTest1
         Assert.Equal(expected, result);
     }
 
+    [Fact]
+    public void testFalse()
+    {
+        //Arrange
+        bool condition = false;
+
+        //Assert
+        Assert.False(condition);
+    }
+
+    [Fact]
+    public void TestNull()
+    {
+        //Arrange
+        object obj = null;
+    
+    
+        //Assert
+        Assert.Null(obj);
+    }
+
+    [Fact]
+    public void TestNotNull()
+    {
+        //Arrange
+        object obj = new object();
+    
+    
+        //Assert
+        Assert.NotNull(obj);
+
+    }
+
+    [Fact]
+    public void TestContains()
+    {
+        //Arrange
+        List<int> collection = new List<int> {42};
+
+        //Assert
+        Assert.Contains(42, collection); 
+    }
+
+    [Fact]
+    public void TestInRange()
+    {
+        //Arrange
+        int actual = 5;
+    
+        //Assert
+        Assert.InRange(actual, 0, 10);
+    
+    }
+
+    [Fact]
+    public void TestEmpty()
+    {
+        // Arrange
+        List<int> collection = new List<int>();
+    
+    
+        //Assert
+        Assert.Empty(collection);
+    }
+
+    [Fact]
+    public void TestNotEmpty()
+    {
+        //Arrange
+        List<int> collection = new List<int> {1};
+    
+        //Assert
+        Assert.NotEmpty(collection);
+    }
+
 
 }
