@@ -37,6 +37,25 @@ namespace temperatureapp.Test
         Assert.Equal(1, result);
         }
 
+        [Theory]
+        [InlineData(new int[] {1, 2, 3}, 6)]
+        [InlineData(new int[] {4, 5, 6}, 15)]
+
+        public void AddMultipleIntergers(int[] numbers, int expected)
+        {
+            //Arrange
+            var calc = new Calculator();
+
+            //Act 
+            var result = calc.Add(numbers);
+
+            //Assert
+            Assert.Equal(expected, result);
+        }
+
+
+
+
 
 
 

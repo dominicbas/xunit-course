@@ -7,9 +7,15 @@ namespace temperatureapp
         {
 
         }
-        public int Add(int a, int b)
+        public int Add(params int[] numbers)
         {
-            return a + b;
+            int sum = 0;
+
+            for (int i = 0; i<numbers.Length; i++)
+            {
+                sum += numbers[i];
+            }
+            return sum;
         }
 
         public int Substract(int a, int b)
