@@ -106,6 +106,23 @@ namespace temperatureapp.Test
             Assert.Equal(result2, calc.History[1]);
 
         }
+        [Theory]
+        [InlineData("2+3", 5)]
+        [InlineData("5-3", 2)]
+        [InlineData("4+6-2", 8)]
+        [InlineData("10+20-5+8", 33)]
+        public void ParseEquationString(string equation, int expected)
+        {
+            //Arrange
+
+            //Act
+            var result = calc.Calculate(equation);
+
+            //Assert
+            Assert.Equal(expected, result);
+        }
+
+
         public void Dispose()
         {
 
