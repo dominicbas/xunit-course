@@ -3,24 +3,24 @@ namespace temperatureapp
 {
     public class Calculator
     {
+        public List<int> History {get; private set; }
         public Calculator()
         {
+            History = new List<int>();
 
         }
         public int Add(params int[] numbers)
         {
-            int sum = 0;
+          
+          var result = numbers.Sum();
+          History.Add(result);
+          return result;
 
-            for (int i = 0; i<numbers.Length; i++)
-            {
-                sum += numbers[i];
-            }
-            return sum;
         }
 
-        public int Substract(int a, int b)
+        public int Substract(params int[] numbers)
         {
-            return a - b;
+            return numbers.Aggregate((a,b) => a-b);
         }
 
     }
